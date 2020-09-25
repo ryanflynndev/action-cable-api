@@ -6,7 +6,9 @@ class MessagesController < ApplicationController
 
     def create 
         message = Message.create(message_params) 
-        render json: MessageSerializer.new(message)
+        # byebug
+        ActionCable.server.broadcast 'chat_channel', params
+        render json: message
     end
 
 
