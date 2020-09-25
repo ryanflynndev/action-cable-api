@@ -1,4 +1,4 @@
 class MessageSerializer
-    include FastJsonapi::ObjectSerializer
+    # include FastJsonapi::ObjectSerializer
     attributes :body
 end
