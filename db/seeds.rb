@@ -5,4 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Message.create(body: "It's working!")
+Chatroom.create(title: "Main")
+Chatroom.create(title: "Second Main")
+Message.create(body: "hey whats up", chatroom_id: 1)
+Message.create(body: "suuuup", chatroom_id: 2)

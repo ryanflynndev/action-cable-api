@@ -6,15 +6,20 @@ class MessagesController < ApplicationController
 
     def create 
         message = Message.create(message_params) 
-        # byebug
-        ActionCable.server.broadcast 'messages_channel', message
+        
+        chatroom = message.chatroom
+
+        ChatroomChannel.broadcast_to(chatroom, {
+            type: "Add Message",
+            message: MessageSerializer.new(message)
+        })    
+
         render json: message
     end
-
 
     private
 
     def message_params
-        params.require(:message).permit(:body)
+        params.require(:message).permit(:body, :chatroom_id)
     end
 end
