@@ -1,4 +1,4 @@
-class MembershipController < ApplicationController
+class MembershipsController < ApplicationController
 
   def create
     membership = Membership.create(membership_params)
@@ -8,6 +8,6 @@ class MembershipController < ApplicationController
   private
 
   def membership_params
-    params.permit(:membership).require(:user_id, :chatroom_id)
+    params.require(:membership).permit(:user_id, :chatroom_id)
   end
 end
