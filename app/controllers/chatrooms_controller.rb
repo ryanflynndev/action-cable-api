@@ -2,7 +2,6 @@ class ChatroomsController < ApplicationController
 
     def index
         chatrooms = Chatroom.all
-        # byebug
         render json: chatrooms
     end
 

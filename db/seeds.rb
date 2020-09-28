@@ -7,5 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Chatroom.create(title: "Main")
 Chatroom.create(title: "Second Main")
-Message.create(body: "hey whats up", chatroom_id: 1)
-Message.create(body: "suuuup", chatroom_id: 2)
+User.create(username: 'Ward', password: '1234', avatar:'James Cameron')
+User.create(username: 'Fred', password: '1234', avatar:'James Cameron')
+User.create(username: "Ryan", password: '1234', avatar: "alien")
+# Message.create(body: "hey whats up", chatroom_id: 1, user_id: 1)
+# Message.create(body: "suuuup", chatroom_id: 2, user_id: 1)
+Membership.create(user_id: 1, chatroom_id: 1)
+Membership.create(user_id: 2, chatroom_id: 1)
+Membership.create(user_id: 2, chatroom_id: 2)
+
+
+puts "finsished seeding"
