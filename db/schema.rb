@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2020_09_27_195714) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "title"
+    t.string "img_url"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
