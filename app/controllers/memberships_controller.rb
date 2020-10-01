@@ -5,6 +5,11 @@ class MembershipsController < ApplicationController
     render json: membership
   end
 
+  def destroy
+    membership = Membership.find(params[:id])
+    membership.destroy
+  end
+
   private
 
   def membership_params
