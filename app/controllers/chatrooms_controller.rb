@@ -13,6 +13,6 @@ class ChatroomsController < ApplicationController
     private
     
     def chatroom_params
-      params.require(:chatroom).permit(:title)
+      params.require(:chatroom).permit(:title, :img_url, :description)
     end
 end
